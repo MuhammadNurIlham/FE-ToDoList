@@ -1,4 +1,39 @@
-.App {
+/* Greeting Atom */
+.heading-greeting {
+  font-family: 'Poppins';
+  font-weight: 500;
+  color: #5D5871;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0.5%;
+}
+.paragraph-greeting {
+  font-family: 'Poppins';
+  font-weight: 400;
+  color: #6D6B7A;
+  font-size: 13px;
+  line-height: 17px;
+  letter-spacing: 0.5%;
+}
+
+/* Title Atom */
+.paragraph-title{
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: 0.5%;
+}
+
+/* Question Atom */
+.question {
+  font-family: 'Poppins';
+  font-weight: 500;
+  color: #333333;
+  font-size: 13px;
+  line-height: 17px;
+  letter-spacing: 0.5%;
+}
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +70,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
