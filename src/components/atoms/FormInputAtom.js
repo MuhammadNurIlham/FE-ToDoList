@@ -15,6 +15,7 @@ function FormInputAtom(props) {
                         value={props.value}
                         as={props.as}
                         rows={props.rows}
+                        style={props.style}
                     />
                 </Form.Group>
                 {/* <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
