@@ -68,17 +68,44 @@ function FormLoginComponent() {
     const handleOnSubmit = useMutation(async (e) => {
         try {
             e.preventDefault();
-            const data = await API.post('/login', form);
+
+            // Configuration
+            const config = {
+                headers: {
+                    "Content-Type": "application/json"
+                },
+            };
+
+            // data Body
+            const body = JSON.stringify(form);
+
+            const response = await API.post('/login', body, config);
+
+            if (response?.status === 200) {
+                // send data to useContext
+                dispatch({
+                    type: "LOGIN_SUCCESS",
+                    payload: {
+                        ...response.data.data,
+                        token: response.data.token,
+                    },
+                });
+            } else {
+                const alertLogin = (
+                    <Alert variant="danger" className="py-1">
+                        Login Failed
+                    </Alert>
+                );
+                setMessage(alertLogin);
+                console.log("Login Failed");
+            };
+            
             const alertLogin = (
                 <Alert variant="success" className="py-1">
                     Login Success
                 </Alert>
             );
             setMessage(alertLogin);
-            dispatch({
-                type: "LOGIN_SUCCESS",
-                payload: data.data.data
-            });
             console.log("this state", state);
             navigate('/home');
 

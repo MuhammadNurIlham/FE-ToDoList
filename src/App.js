@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import { Routes, Route, Link, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 
 import { API, setAuthToken } from "./config/API";
 import { UserContext } from "./context/UserContext";

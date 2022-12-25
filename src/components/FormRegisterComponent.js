@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { useMutation } from 'react-query';
 import { useNavigate } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
-import { Alert } from 'bootstrap';
+import { Alert } from "react-bootstrap";
 
 import { API } from '../config/API';
 import { UserContext } from '../context/UserContext';
@@ -99,7 +99,9 @@ function FormRegisterComponent() {
                     userName: "",
                     password: "",
                 });
-                navigateToLogin();
+                setTimeout(() => {
+                    navigateToLogin();
+                }, 2000);
             } else {
                 const alertRegister = (
                     <Alert variant="danger" className="py-1">
@@ -190,7 +192,7 @@ function FormRegisterComponent() {
                         <span className='question1 fw-bold'
                             style={{ color: '#1571DE' }}
                             onClick={() => navigateToLogin()}
-                            >
+                        >
                             Login
                         </span>
                     </p>
