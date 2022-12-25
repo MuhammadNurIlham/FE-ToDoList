@@ -1,10 +1,10 @@
 import React from 'react';
 import TodolistAtom from '../components/atoms/TodolistAtom';
 import CardComponent from '../components/CardComponent';
-import FormRegisterComponent from '../components/FormRegisterComponent';
+import FormLoginComponent from '../components/FormLoginComponent';
 
 
-function LandingPage() {
+function LandingPageLogin() {
     return (
         <div className='container landing-page py-5'>
             <div className='row'>
@@ -16,7 +16,7 @@ function LandingPage() {
                 </div>
 
                 <div className='col bg-white'>
-                    <FormRegisterComponent />
+                    <FormLoginComponent />
                 </div>
 
             </div>
@@ -24,4 +24,4 @@ function LandingPage() {
     )
 }
 
-export default LandingPage;
+export default LandingPageLogin;
