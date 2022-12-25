@@ -9,6 +9,7 @@ import HomePage from './pages/HomePage';
 import LandingPage from "./pages/LandingPage";
 import PrivateRoute from "./pages/PrivateRoute";
 import LandingPageLogin from "./pages/LandingPageLogin";
+import CardHomeComponent from "./components/CardHomeComponent";
 
 function App() {
   let navigate = useNavigate();
@@ -62,7 +63,7 @@ function App() {
 
   return (
     <div className="App">
-      {isLoading ? (
+      {/* {isLoading ? (
         <h1>Loading... Please Wait.....</h1>
       ) : (
         <Routes>
@@ -73,7 +74,8 @@ function App() {
             <Route exact path="/home" element={<HomePage />} />
           </Route>
         </Routes>
-      )}
+      )} */}
+      <CardHomeComponent />
     </div>
   );
 }

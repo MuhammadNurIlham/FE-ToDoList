@@ -13,7 +13,7 @@ function CardComponent() {
         background: "#E1DEDE",
         borderRadius: "6px",
         border: "none"
-    }
+    };
 
     return (
         <div>
