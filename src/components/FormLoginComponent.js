@@ -90,6 +90,15 @@ function FormLoginComponent() {
                         token: response.data.token,
                     },
                 });
+                const alertLogin = (
+                    <Alert variant="success" className="py-1">
+                        Login Success
+                    </Alert>
+                );
+                setMessage(alertLogin);
+                console.log("this state", state);
+                navigate('/home');
+
             } else {
                 const alertLogin = (
                     <Alert variant="danger" className="py-1">
@@ -99,16 +108,6 @@ function FormLoginComponent() {
                 setMessage(alertLogin);
                 console.log("Login Failed");
             };
-            
-            const alertLogin = (
-                <Alert variant="success" className="py-1">
-                    Login Success
-                </Alert>
-            );
-            setMessage(alertLogin);
-            console.log("this state", state);
-            navigate('/home');
-
 
         } catch (error) {
             console.log(error);

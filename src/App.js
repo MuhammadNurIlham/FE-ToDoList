@@ -9,22 +9,19 @@ import HomePage from './pages/HomePage';
 import LandingPage from "./pages/LandingPage";
 import PrivateRoute from "./pages/PrivateRoute";
 import LandingPageLogin from "./pages/LandingPageLogin";
-import CardHomeComponent from "./components/CardHomeComponent";
+
+
+// init token on axios every time the app is refreshed
+if (localStorage.getItem('token')) {
+  setAuthToken(localStorage.getItem('token'));
+};
+
 
 function App() {
   let navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
   const [state, dispatch] = useContext(UserContext);
   console.log(state);
-
-  useEffect(() => {
-    if (localStorage.token) {
-      setAuthToken(localStorage.token);
-    };
-    if (state.isLogin === false && !isLoading) {
-      navigate('/');
-    };
-  }, [state]);
 
   const checkUser = async () => {
     try {
@@ -60,22 +57,33 @@ function App() {
     checkUser();
   }, []);
 
+  useEffect(() => {
+    if (localStorage.getItem('token')) {
+      setAuthToken(localStorage.getItem('token'));
+    };
+    if (state.isLogin === false && !isLoading) {
+      navigate('/');
+    };
+  }, [state]);
+
+
 
   return (
     <div className="App">
-      {/* {isLoading ? (
+      {isLoading ? (
         <h1>Loading... Please Wait.....</h1>
       ) : (
         <Routes>
+
           <Route exact path="/" element={<LandingPage />} />
           <Route exact path="/login" element={<LandingPageLogin />} />
 
           <Route exact path="/" element={<PrivateRoute />} >
             <Route exact path="/home" element={<HomePage />} />
           </Route>
+
         </Routes>
-      )} */}
-      <CardHomeComponent />
+      )}
     </div>
   );
 }
